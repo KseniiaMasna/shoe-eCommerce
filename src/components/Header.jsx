@@ -1,43 +1,44 @@
 import React, { useState } from 'react';
 import { MagnifyingGlassIcon, ShoppingBagIcon, UserIcon } from '@heroicons/react/24/outline';
 
-const Header = () => {
-  // State to track the selected main category
-  const [selectedCategory, setSelectedCategory] = useState(null);
+//Custom icons for subcategories
+import casualIcon from '../assets/custom-icons/casual.svg'
+import sportIcon from '../assets/custom-icons/sport.svg'
+import formalIcon from '../assets/custom-icons/formal.svg'
+import hikingIcon from '../assets/custom-icons/hiking.svg'
+import slippersIcon from '../assets/custom-icons/slippers.svg'
 
-  // Main navigation items
+const Header = () => {
+  const [selectedCategory, setSelectedCategory] = useState(true);
+
   const mainNavItems = [
     { label: 'Men', path: '/men' },
     { label: 'Women', path: '/women' },
     { label: 'Kids', path: '/kids' }
   ];
-
-  // Shoe category items with their respective icons
   const shoeCategories = [
-    { label: 'Casual', icon: '👟', path: '/casual' },
-    { label: 'Sports', icon: '🏃', path: '/sports' },
-    { label: 'Formal', icon: '👞', path: '/formal' },
-    { label: 'Hiking', icon: '🥾', path: '/hiking' },
-    { label: 'Slippers', icon: '🩴', path: '/slippers' }
+    { label: 'Casual', icon: casualIcon, path: '/casual' },
+    { label: 'Sports', icon: sportIcon, path: '/sports' },
+    { label: 'Formal', icon: formalIcon, path: '/formal' },
+    { label: 'Hiking', icon: hikingIcon, path: '/hiking' },
+    { label: 'Slippers', icon: slippersIcon, path: '/slippers' }
   ];
 
-  // Handle category selection
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
 
   return (
     <header className="border-b border-gray-200">
-      {/* Main header section */}
       <div className="max-w-7xl mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
-          {/* Left section: Logo and search */}
-          <div className="flex items-center space-x-4">
+          {/*Logo and search */}
+          <div className="flex items-center justify-start space-x-4 w-32">
             <h1 className="text-xl font-bold">SHOE</h1>
             <MagnifyingGlassIcon className="w-5 h-5 text-gray-500 cursor-pointer" />
           </div>
 
-          {/* Center section: Main navigation */}
+          {/* Center section */}
           <div className="flex space-x-8">
             {mainNavItems.map((item) => (
               <button
@@ -54,17 +55,17 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Right section: Cart and account */}
-          <div className="flex items-center space-x-4">
+          {/* Cart and Profile */}
+          <div className="flex items-center justify-end space-x-4 w-32">
             <ShoppingBagIcon className="w-5 h-5 text-gray-700 cursor-pointer" />
             <UserIcon className="w-5 h-5 text-gray-700 cursor-pointer" />
           </div>
         </nav>
       </div>
 
-      {/* Subcategory navigation - only shown when a main category is selected */}
+      {/* Subcategory navigation*/}
       {selectedCategory && (
-        <div className="border-t border-gray-200">
+        <div>
           <div className="max-w-7xl mx-auto px-4">
             <nav className="flex justify-center py-3">
               <div className="flex space-x-12">
@@ -75,7 +76,7 @@ const Header = () => {
                   >
                     <div className="text-gray-400 group-hover:text-black transition-colors">
                       {/* You can replace these emojis with actual shoe icons */}
-                      {category.icon}
+                      <img src={category.icon} alt="" />
                     </div>
                     <span className="text-xs text-gray-600 group-hover:text-black transition-colors">
                       {category.label}

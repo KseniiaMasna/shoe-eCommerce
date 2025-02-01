@@ -1,3 +1,5 @@
+import imgPlaceholder from './img/shoe-img-placeholder.png'
+
 const skechersData = [
     {
       name: "Skechers GOwalk 6",
@@ -63,7 +65,20 @@ const skechersData = [
     {},
     {},
     {},
-  ];
+]
+
+const defaultShoe = {
+  name: "Default Product",
+  purpose: "General Use",
+  price: "99.99",
+  description: "This is a default product description.",
+  src: imgPlaceholder, 
+  colors: [
+    { name: "color", equivalent: "bg-neutral-300" },
+    
+  ],
+  availableSizes: ["36", "37", "38", "39"],
+}
   
-  export default skechersData;
+  export {skechersData, defaultShoe};
   

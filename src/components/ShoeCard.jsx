@@ -5,7 +5,7 @@ const ShoeCard = ({shoe, onQuickView}) => {
             onClick={() => onQuickView(shoe)}
             className="group cursor-pointer"
         >
-            <div className="aspect-square bg-gray-100 mb-4">
+            <div className="aspect-square bg-gray-100 mb-4 transition-shadow duration-300 hover:shadow-lg rounded-lg">
                 <img
                     src={shoe.src}
                     alt={shoe.name}
