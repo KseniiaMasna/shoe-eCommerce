@@ -18,7 +18,7 @@ const Header = () => {
   ];
   const shoeCategories = [
     { label: 'Casual', icon: casualIcon, path: '/casual' },
-    { label: 'Sports', icon: sportIcon, path: '/sports' },
+    { label: 'Sport', icon: sportIcon, path: '/sports' },
     { label: 'Formal', icon: formalIcon, path: '/formal' },
     { label: 'Hiking', icon: hikingIcon, path: '/hiking' },
     { label: 'Slippers', icon: slippersIcon, path: '/slippers' }
@@ -44,11 +44,7 @@ const Header = () => {
               <button
                 key={item.label}
                 onClick={() => handleCategoryClick(item.label)}
-                className={`text-sm transition-colors ${
-                  selectedCategory === item.label
-                    ? 'text-black'
-                    : 'text-gray-600 hover:text-black'
-                }`}
+                className={`text-md transition-colors text-black`}
               >
                 {item.label}
               </button>
@@ -66,7 +62,7 @@ const Header = () => {
       {/* Subcategory navigation*/}
       {selectedCategory && (
         <div>
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto px-4 pb-6">
             <nav className="flex justify-center py-3">
               <div className="flex space-x-12">
                 {shoeCategories.map((category) => (
@@ -74,8 +70,7 @@ const Header = () => {
                     key={category.label}
                     className="flex flex-col items-center space-y-1 cursor-pointer group"
                   >
-                    <div className="text-gray-400 group-hover:text-black transition-colors">
-                      {/* You can replace these emojis with actual shoe icons */}
+                    <div className="text-gray-400 group-hover:text-black transition-colors">                      
                       <img src={category.icon} alt="" />
                     </div>
                     <span className="text-xs text-gray-600 group-hover:text-black transition-colors">
