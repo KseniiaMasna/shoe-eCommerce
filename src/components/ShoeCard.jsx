@@ -15,8 +15,8 @@ const ShoeCard = ({shoe, onQuickView}) => {
             
             <div className="space-y-1">                
                 <h3 className="text-gray-900 font-semibold">{shoe.name}</h3>
-                <p className="text-xs text-gray-500">{shoe.purpose}</p>    
-                <p className="text-sm text-gray-900">€{shoe.price}</p>
+                <p className="text-sm text-gray-500">{shoe.purpose}</p>    
+                <p className="text-sm text-gray-900 font-semibold">€{shoe.price}</p>
             </div>
         </div>
     )

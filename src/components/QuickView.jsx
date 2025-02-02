@@ -1,11 +1,9 @@
-import { useEffect } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import ButtonPrimary from './primitive-components/ButtonPrimary';
 import ButtonIcon from './primitive-components/ButtonIcon'
 
 
-const QuickView = ({ product, onClose }) => {
-
+const QuickView = ({ onClose, product}) => {
 
   if (!product) return null;
 
@@ -15,7 +13,7 @@ const QuickView = ({ product, onClose }) => {
           <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
             <XMarkIcon className="w-6 h-6" />
           </button>
-        {/* Carousel container*/}
+        {/* Carousel container*/}        
         <img src={product.src} alt="" className='max-h-[360px] h-full w-full object-cover'/>
 
         {/* Content container */}
@@ -35,9 +33,9 @@ const QuickView = ({ product, onClose }) => {
               <h3 className="text-gray-500 font-normal mb-2">Select color:</h3>
               <div className="flex gap-6">
                 {product.colors.map((color) => (
-                  <div className="flex flex-col items-center">
-                    <div className={`w-8 h-8 ${color.equivalent} rounded-full`}></div>
-                    <p className="text-sm text-gray-800 mt-1">{color.name}</p>
+                  <div className="flex flex-col items-center text-gray-500 hover:text-neutral-950">
+                    <div className={`w-8 h-8 ${color.equivalent} rounded-full border border-neutral-200`}></div>
+                    <p className="text-sm  mt-1 ">{color.name}</p>
                   </div>
                 ))}
               </div>

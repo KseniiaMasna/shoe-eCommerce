@@ -29,13 +29,14 @@ const Header = () => {
   };
 
   return (
-    <header className="border-b border-gray-200">
+    <header className="border-b border-neutral-100">
       <div className="max-w-7xl mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           {/*Logo and search */}
           <div className="flex items-center justify-start space-x-4 w-32">
             <h1 className="text-xl font-bold">SHOE</h1>
-            <MagnifyingGlassIcon className="w-5 h-5 text-gray-500 cursor-pointer" />
+            <MagnifyingGlassIcon className="w-6 h-6 text-gray-500 cursor-pointer rounded-full hover:text-neutral-950" />
+
           </div>
 
           {/* Center section */}
@@ -44,7 +45,7 @@ const Header = () => {
               <button
                 key={item.label}
                 onClick={() => handleCategoryClick(item.label)}
-                className={`text-md transition-colors text-black`}
+                className={`text-md transition-colors text-neutral-700 hover:text-neutral-950`}
               >
                 {item.label}
               </button>
@@ -53,8 +54,8 @@ const Header = () => {
 
           {/* Cart and Profile */}
           <div className="flex items-center justify-end space-x-4 w-32">
-            <ShoppingBagIcon className="w-5 h-5 text-gray-700 cursor-pointer" />
-            <UserIcon className="w-5 h-5 text-gray-700 cursor-pointer" />
+            <ShoppingBagIcon className="w-6 h-6 text-gray-500 cursor-pointer hover:text-neutral-950" />
+            <UserIcon className="w-6 h-6 text-gray-500 cursor-pointer hover:text-neutral-950" />
           </div>
         </nav>
       </div>
@@ -64,11 +65,11 @@ const Header = () => {
         <div>
           <div className="max-w-7xl mx-auto px-4 pb-6">
             <nav className="flex justify-center py-3">
-              <div className="flex space-x-12">
+              <div className="flex space-x-4">
                 {shoeCategories.map((category) => (
                   <div
                     key={category.label}
-                    className="flex flex-col items-center space-y-1 cursor-pointer group"
+                    className="flex flex-col items-center p-3 rounded-2xl space-y-1 cursor-pointer group hover:bg-neutral-50"
                   >
                     <div className="text-gray-400 group-hover:text-black transition-colors">                      
                       <img src={category.icon} alt="" />

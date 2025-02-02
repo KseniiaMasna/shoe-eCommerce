@@ -34,10 +34,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white border-t border-gray-200">
+    <footer className="border-t border-neutral-100">
       <div className="max-w-7xl mx-auto px-4 py-12 ">        
         <div className="mb-8">
-          <a href="/" className="text-xl font-bold text-gray-900">
+          <a href="/" className="text-xl font-bold text-neutral-950">
             SHOE
           </a>
         </div>
